@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   This is the "layout" file; a few questions to consider:
+        First, you need to fill in the areas marked below
+        What do you think the function of this file is?
+        What do each of the different elements do when you run the app?
+   Try changing around a few of the sections, and see what they do.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--
+        Look up different input methods and fill the android:inputType in.
+            The goal is to include autocorrect and automatically capitalize sentences.
+        What do you think the android:hint does? Where do you edit/find this to change the value?
+        Update the value once you've found out to be something new.
+        Hint: Try checking the folder values and then see if you can find something in there that helps.
+    -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/translator"
+        android:inputType=""
+        android:id="@+id/inputTextToTranslate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+        Edit the text to be a new temporary message below to be in the same format as "@string/translator"
+        where translator is the new Message you want to display.
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Translated output"
+        android:id="@+id/textViewTranslated"
+        app:layout_constraintTop_toBottomOf="@+id/inputTextToTranslate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--
+        Lastly, we need to define where we are going to store our languages. To do this, we'll use
+        something called a Spinner, or a scrollable dropdown menu.
+
+        Here, we define 2: 1 for the input/source language adn one for the output/destination language.
+    -->
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sourceLanguageSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTranslated"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTranslated" />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationLanguageSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTranslated"
+        app:layout_constraintStart_toEndOf="@+id/textViewTranslated" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
