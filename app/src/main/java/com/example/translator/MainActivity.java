@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         /** ! The first thing we do is build a HashMap to store the different country and language codes that our
          * translator will support.
-         *
          * HashMaps work by storing a Key and a Value pair: you can think of it as when given a certain key, the
          * HashMap will automatically bring you the right door that fits that key. Behind that door is the value we
          * defined before. Here, we have a langauge and country code as well as a display name, so we build
@@ -50,13 +49,15 @@ public class MainActivity extends AppCompatActivity {
          *
          * Your job here is to add each of the key/value pairs to our HashMap that we define below.
          */
-        final HashMap<String,String> languages = new HashMap<>();
+
+        final HashMap<String,String> Languages = new HashMap<>();
         final ArrayList<String> langArray = new ArrayList<>();
         for (String locale : Locale.getISOLanguages()) {
             Locale tempLocale = new Locale(locale);
             String curr_value = locale;
             String curr_key = tempLocale.getDisplayName();
             langArray.add(curr_key);
+            Languages.put(curr_key,curr_value);
             //add the current language to the languages HashMap (hint, google adding elements to a hashmap)
         }
 
@@ -92,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 // !Define a new key from the list here https://developer.android.com/reference/android/view/KeyEvent to be clicked!
-                if (keyCode == 0){
+                if (keyCode == 66){
                     /** ! Update the TextView we defined above with the text from the EditText.
                      *
                      * Notice, we only do this once we confirm that the correct key has been pressed.
                      */
-                    translatedText.setText("Fix me! Change this to be the Edited Text. ");
+                    translatedText.setText("EditText");
                 }
                 return false;
             }
