@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Translator</string>
     <string name="translator">Text to Translate</string>
+    <string name="translated_output">Translated output</string>
 </resources>

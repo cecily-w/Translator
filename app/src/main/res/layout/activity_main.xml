@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/translator"
-        android:inputType=""
+        android:inputType="textCapSentences|textAutoCorrect"
         android:id="@+id/inputTextToTranslate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -35,13 +35,14 @@
         where translator is the new Message you want to display.
     -->
     <TextView
+        android:id="@+id/textViewTranslated"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Translated output"
-        android:id="@+id/textViewTranslated"
-        app:layout_constraintTop_toBottomOf="@+id/inputTextToTranslate"
+        android:text="@string/translated_output"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTextToTranslate" />
 
     <!--
         Lastly, we need to define where we are going to store our languages. To do this, we'll use
@@ -50,12 +51,14 @@
         Here, we define 2: 1 for the input/source language adn one for the output/destination language.
     -->
     <Spinner
+        android:id="@+id/sourceLanguageSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sourceLanguageSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTranslated"
-        app:layout_constraintEnd_toStartOf="@+id/textViewTranslated" />
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTranslated"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTranslated" />
     <Spinner
+        android:spinnerMode="dropdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/destinationLanguageSpinner"

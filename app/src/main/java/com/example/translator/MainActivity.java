@@ -50,14 +50,15 @@ public class MainActivity extends AppCompatActivity {
          * Your job here is to add each of the key/value pairs to our HashMap that we define below.
          */
 
-        final HashMap<String,String> Languages = new HashMap<>();
+        final HashMap<String, String> Languages = new HashMap<>();
         final ArrayList<String> langArray = new ArrayList<>();
         for (String locale : Locale.getISOLanguages()) {
             Locale tempLocale = new Locale(locale);
             String curr_value = locale;
             String curr_key = tempLocale.getDisplayName();
             langArray.add(curr_key);
-            Languages.put(curr_key,curr_value);
+            Languages.put(curr_key, curr_value);
+            /*System.out.println(Languages);*/
             //add the current language to the languages HashMap (hint, google adding elements to a hashmap)
         }
 
@@ -93,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 // !Define a new key from the list here https://developer.android.com/reference/android/view/KeyEvent to be clicked!
-                if (keyCode == 66){
+                if (keyCode == KeyEvent.KEYCODE_ENTER){
                     /** ! Update the TextView we defined above with the text from the EditText.
                      *
                      * Notice, we only do this once we confirm that the correct key has been pressed.
                      */
-                    translatedText.setText("EditText");
+                    translatedText.setText(editTextToTranslate.getText()); /*edit text-user input what goes in parenth*/
                 }
                 return false;
             }
